@@ -40,12 +40,14 @@ function writePassword(length) {
 function handleButtonPress(){
   document.getElementById("password").style.display="none";
   document.getElementById("prompt").style.display="flex";
+  generateBtn.style.display="none";
   // promptForInput("Enter a number between 8 and 128");
 }
 
 function handleGoPress(){
   document.getElementById("prompt").style.display="none";
   document.getElementById("password").style.display="block";
+  generateBtn.style.display="inline-block";
   
 }
 
