@@ -2,7 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 var goBtn = document.querySelector("#go");
 var charLength = document.querySelector("#charLength");
-var promptDisplay = document.querySelector("#prompt");
+
+
 const lowercase="abcdefghijklmnopqrstuvwxyz";
 const uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeric="1234567890";
@@ -37,8 +38,15 @@ function writePassword(length) {
 // adding handleButtonPress as part of addEventListener 
 // is a hacky workaround but fixes the problem.
 function handleButtonPress(){
+  document.getElementById("password").style.display="none";
+  document.getElementById("prompt").style.display="flex";
+  // promptForInput("Enter a number between 8 and 128");
+}
 
-  promptForInput("Enter a number between 8 and 128");
+function handleGoPress(){
+  document.getElementById("prompt").style.display="none";
+  document.getElementById("password").style.display="block";
+  
 }
 
 //TO DO, dont use dialogue boxes, construct a popup form instead.
@@ -61,3 +69,4 @@ function promptForInput(message){
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", handleButtonPress);
+goBtn.addEventListener("click", handleGoPress)

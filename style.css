@@ -119,8 +119,8 @@ button[disabled] {
 }
 
 .prompt{
-  /* display: none; */
-  display: flex;
+  display: none;
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto;
@@ -130,6 +130,7 @@ button[disabled] {
   background-color: beige;
 
 }
+
 
 @media (max-width: 690px) {
   .btn {
