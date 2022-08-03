@@ -1,12 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var goBtn = document.querySelector("#go");
+var charLength = document.querySelector("#charLength");
+var promptDisplay = document.querySelector("#prompt");
+const lowercase="abcdefghijklmnopqrstuvwxyz";
+const uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numeric="1234567890";
+const special="!@#$%^&*()_+-=.,";
 
 // THIS FUNCTION IS NOT CRYPOGRAPHICALLY SECURE. USES A PSEUDORANDOM NUMBER GENERATOR.
 function generatePassword(ofLength){
-  const lowercase="abcdefghijklmnopqrstuvwxyz"
-  const uppercase="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  const numeric="1234567890"
-  const special="!@#$%^&*()_+-=.,"
+  
   //TODO add logic to respond to user criteria for the password.
   const possibleChars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=., "
   let generatedPassword="";
@@ -33,6 +37,7 @@ function writePassword(length) {
 // adding handleButtonPress as part of addEventListener 
 // is a hacky workaround but fixes the problem.
 function handleButtonPress(){
+
   promptForInput("Enter a number between 8 and 128");
 }
 

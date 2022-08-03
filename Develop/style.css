@@ -118,6 +118,19 @@ button[disabled] {
   overflow: hidden;
 }
 
+.prompt{
+  /* display: none; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 30px 40px;
+  max-width: 800px;
+  width:100%;
+  background-color: beige;
+
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

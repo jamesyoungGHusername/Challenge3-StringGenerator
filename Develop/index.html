@@ -12,19 +12,42 @@
       <header>
         <h1>Password Generator</h1>
       </header>
+      
       <div class="card">
+        
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+       
         <div class="card-body">
+          <section class="prompt">
+            <form>
+              <label for="charLength">How many characters should the password contain?</label><br>
+              <input type="text" id="charLength" name="charLength">
+              <br>
+              <input type="checkbox" id="lowercase" name="chartype" value="lowercase">
+              <label for="lowercase">include lowercase characters</label>
+              <br>
+              <input type="checkbox" id="uppercase" name="chartype" value="uppercase">
+              <label for="uppercase">include uppercase characters</label>
+              <br>
+              <input type="checkbox" id="numeric" name="chartype" value="numeric">
+              <label for="numeric">include numeric characters</label>
+              <br>
+              <input type="checkbox" id="special" name="chartype" value="special">
+              <label for="special">include special characters</label>
+            </form>
+            <button id="go" class="btn">GO</button>
+          </section>
           <textarea
             readonly
             id="password"
             placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+            aria-label="Generated Password">
+          </textarea>
         </div>
         <div class="card-footer">
+          
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
