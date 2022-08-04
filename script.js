@@ -37,6 +37,7 @@ function getRandomInt(max){
 
 // Write password to the #password input
 function writePassword(length) {
+  
   var password = generatePassword(length);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -66,12 +67,14 @@ function handleGoPress(){
     document.getElementById("prompt").style.display="none";
     document.getElementById("password").style.display="block";
     generateBtn.style.display="inline-block";
-    writePassword(msgLen);
+    while (msgLen==0){
+      msgLen = promptForInput("Pasword length must be specified.");
+    }
+    writePassword();
   }else{
     document.getElementById("prompt").style.backgroundColor = "red";
     document.getElementById("promptMessage").innerHTML = "You must select at least one type of character.";
   }
-  
   
 }
 
