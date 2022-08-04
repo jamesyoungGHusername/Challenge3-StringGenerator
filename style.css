@@ -121,7 +121,7 @@ button[disabled] {
 .prompt{
   display: none;
   /* display: flex; */
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
   padding: 30px 40px;

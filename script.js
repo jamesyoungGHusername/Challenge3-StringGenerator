@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var goBtn = document.querySelector("#go");
-var incluLower = document.querySelector("#lowercase");
-var incluUpper = document.querySelector("#uppercase");
-var incluNumeric = document.querySelector("#numeric");
-var incluSpecial = document.querySelector("#special");
+var incluLower = document.querySelector("#lowercase").checked;
+var incluUpper = document.querySelector("#uppercase").checked;
+var incluNumeric = document.querySelector("#numeric").checked;
+var incluSpecial = document.querySelector("#special").checked;
 
 var msgLen = 0;
 
@@ -18,11 +18,11 @@ const special="!@#$%^&*()_+-=.,";
 
 // THIS FUNCTION IS NOT CRYPOGRAPHICALLY SECURE. USES A PSEUDORANDOM NUMBER GENERATOR.
 function generatePassword(ofLength){
-  const possibleChars=""
-  if(incluLower){possibleChars.concat(lowercase);}
-  if(incluUpper){possibleChars.concat(uppercase);}
-  if(incluNumeric){possibleChars.concat(numeric);}
-  if(incluSpecial){possibleChars.concat(special);}
+  let possibleChars=""
+  if(incluLower){possibleChars=possibleChars+lowercase;}
+  if(incluUpper){possibleChars=possibleChars+uppercase;}
+  if(incluNumeric){possibleChars=possibleChars+numeric;}
+  if(incluSpecial){possibleChars=possibleChars+special;}
   let generatedPassword="";
   for (let i=0;i<ofLength;i++){
     generatedPassword+=possibleChars.charAt(getRandomInt(possibleChars.length));
@@ -37,7 +37,6 @@ function getRandomInt(max){
 
 // Write password to the #password input
 function writePassword(length) {
-  
   var password = generatePassword(length);
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -59,10 +58,10 @@ function handleButtonPress(){
 //if none are selected it highlights the prompt and asks for revised input
 //if at least one is selected it stops displaying the message and generates the password.
 function handleGoPress(){
-  incluLower = document.querySelector("#lowercase");
-  incluUpper = document.querySelector("#uppercase");
-  incluNumeric = document.querySelector("#numeric");
-  incluSpecial = document.querySelector("#special");
+  incluLower = document.querySelector("#lowercase").checked;
+  incluUpper = document.querySelector("#uppercase").checked;
+  incluNumeric = document.querySelector("#numeric").checked;
+  incluSpecial = document.querySelector("#special").checked;
   if (incluLower || incluUpper || incluNumeric || incluSpecial){
     document.getElementById("prompt").style.display="none";
     document.getElementById("password").style.display="block";
@@ -70,10 +69,11 @@ function handleGoPress(){
     while (msgLen==0){
       msgLen = promptForInput("Pasword length must be specified.");
     }
-    writePassword();
+    console.log(msgLen);
+    writePassword(msgLen);
   }else{
     document.getElementById("prompt").style.backgroundColor = "red";
-    document.getElementById("promptMessage").innerHTML = "You must select at least one type of character.";
+    //document.getElementById("promptMesssage").innerHTML = "You must select at least one type of character.";
   }
   
 }
@@ -86,12 +86,13 @@ function promptForInput(message){
   if(lenStr===null || lenStr===""){
     pass
   }else{
-    msgLen=parseInt(lenStr);
+    lenInt=parseInt(lenStr);
     if (isNaN(lenInt)){
       promptForInput("That number wasn't recognized. Try again.")
     }else if(lenInt<8 || lenInt>128){
       promptForInput("That entry was outside specified bounds. Try again.\nGenerated password must contain between 8 and 128 characters.")
     }
+    return lenInt;
   }
 }
 
