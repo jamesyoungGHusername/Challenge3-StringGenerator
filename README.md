@@ -13,8 +13,10 @@ A pseudorandom "password" generator. Promts the user for input, validates that i
 ## Installation
 
 This project is live on github pages, and the code can be viewed on the repo.
-*[github repo here](https://github.com/jamesyoungGHusername/Challenge3-StringGenerator)
-*[github pages deployment here](https://jamesyoungghusername.github.io/Challenge3-StringGenerator/)
+
+* [github repo here](https://github.com/jamesyoungGHusername/Challenge3-StringGenerator)
+
+* [github pages deployment here](https://jamesyoungghusername.github.io/Challenge3-StringGenerator/)
 
 ## Usage
 Do not use this to generate actual passwords to be used. The generation is pseudorandom. The page should prompt the user for input when they click the generate password button, and then use that input to generate a custom password.
