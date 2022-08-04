@@ -69,7 +69,6 @@ function handleGoPress(){
     while (msgLen==0){
       msgLen = promptForInput("Pasword length must be specified.");
     }
-    console.log(msgLen);
     writePassword(msgLen);
   }else{
     document.getElementById("prompt").style.backgroundColor = "red";
@@ -82,7 +81,6 @@ function handleGoPress(){
 //attempts to validate it, and asks again with a different message if the input isnt valid.
 function promptForInput(message){
   var lenStr = prompt(message, "Enter a number");
-  console.log(lenStr);
   if(lenStr===null || lenStr===""){
     pass
   }else{
