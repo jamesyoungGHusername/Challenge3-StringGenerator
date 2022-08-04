@@ -48,6 +48,8 @@ function writePassword(length) {
 // is a hacky workaround but fixes the problem.
 function handleButtonPress(){
   msgLen = promptForInput("Enter a number between 8 and 128.");
+  document.getElementById("prompt").style.backgroundColor = "beige";
+    document.getElementById("promptMesssage").innerText = "Which types of characters would you like included?";
   document.getElementById("password").style.display="none";
   document.getElementById("prompt").style.display="flex";
   generateBtn.style.display="none";
@@ -72,7 +74,7 @@ function handleGoPress(){
     writePassword(msgLen);
   }else{
     document.getElementById("prompt").style.backgroundColor = "red";
-    //document.getElementById("promptMesssage").innerHTML = "You must select at least one type of character.";
+    document.getElementById("promptMesssage").innerText = "You must select at least one type of character.";
   }
   
 }
